@@ -231,7 +231,8 @@
         <div class="circle-logo"></div>
         
         <div class="telegram-section">
-            <h2 class="telegram-title">Join Telegram Channel</h2>
+            <a href="https://t.me/+h0XNzmqB-xowY2M1" class="join-button" target="_blank">🚀 Join Telegram Channel</a>
+            
             <p class="trusted">🔥 100% Trusted & Winning Channel 🔥</p>
             
             <div class="features">
@@ -252,47 +253,51 @@
             <!-- Button -->
             <a href="https://t.me/+h0XNzmqB-xowY2M1" class="join-button" target="_blank">🚀 Join Telegram Channel</a>
             
-            <div class="countdown">
-                <div class="countdown-item">
-                    <span class="countdown-value" id="days">00</span>
-                    <span class="countdown-label">Days</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="hours">00</span>
-                    <span class="countdown-label">Hours</span>
-                </div>
-                <div class="countdown-item">
-                    <span class="countdown-value" id="minutes">00</span>
-                    <span class="countdown-label">Minutes</span>
-                </div>
-            </div>
-        </div>
-        
-       
+           <div class="countdown">
+    <div class="countdown-item">
+        <span class="countdown-value" id="days">00</span>
+        <span class="countdown-label">Days</span>
     </div>
+    <div class="countdown-item">
+        <span class="countdown-value" id="hours">00</span>
+        <span class="countdown-label">Hours</span>
+    </div>
+    <div class="countdown-item">
+        <span class="countdown-value" id="minutes">00</span>
+        <span class="countdown-label">Minutes</span>
+    </div>
+    <div class="countdown-item">
+        <span class="countdown-value" id="seconds">00</span>
+        <span class="countdown-label">Seconds</span>
+    </div>
+</div>
 
-    <script>
-        // Set the date we're counting down to (7 days from now)
-        const countDownDate = new Date();
-        countDownDate.setDate(countDownDate.getDate() + 7);
-        
-        // Update the countdown every 1 second
-        const countdownFunction = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            
-            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
-            
-            if (distance < 0) {
-                countDownDate.setDate(countDownDate.getDate() + 7);
-            }
-        }, 1000);
-    </script>
+<script>
+    // Set countdown target (7 days from now)
+    const countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 7);
+
+    const countdownFunction = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+        // Reset when finished (auto restart for next 7 days)
+        if (distance < 0) {
+            countDownDate.setDate(countDownDate.getDate() + 7);
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>
+
