@@ -13,7 +13,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: #fff;
             min-height: 100vh;
             display: flex;
@@ -27,12 +27,12 @@
             max-width: 500px;
             width: 100%;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
             text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
         
         .logo {
@@ -49,23 +49,35 @@
         
         .subtitle {
             font-size: 18px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #ddd;
+        }
+
+        /* Circle Logo */
+        .circle-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 20px auto;
+            border: 4px solid #00a8ff;
+            box-shadow: 0 5px 15px rgba(0,168,255,0.5);
+            background: url('logo.jpg') no-repeat center/cover; /* Replace with your logo */
         }
         
         .telegram-section {
             background: rgba(0, 136, 204, 0.15);
-            border-radius: 10px;
-            padding: 20px;
+            border-radius: 12px;
+            padding: 25px;
             margin: 25px 0;
             border: 1px solid rgba(0, 136, 204, 0.3);
         }
         
         .telegram-title {
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             margin-bottom: 10px;
-            color: #0088cc;
+            color: #00a8ff;
+            text-transform: uppercase;
         }
         
         .trusted {
@@ -84,8 +96,13 @@
             align-items: center;
             margin-bottom: 15px;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.07);
             border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        
+        .feature-item:hover {
+            transform: scale(1.02);
         }
         
         .feature-checkbox {
@@ -113,19 +130,26 @@
             display: inline-block;
             background: linear-gradient(45deg, #0088cc, #00a8ff);
             color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            font-weight: 600;
+            padding: 16px 36px;
+            font-size: 20px;
+            font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
-            margin: 20px 0;
+            margin: 25px 0;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 168, 255, 0.5);
+            animation: pulse 2s infinite;
         }
         
         .join-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 168, 255, 0.7);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0,168,255, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0,168,255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,168,255, 0); }
         }
         
         .countdown {
@@ -135,69 +159,84 @@
         }
         
         .countdown-item {
-            margin: 0 10px;
+            margin: 0 12px;
             text-align: center;
         }
         
         .countdown-value {
             display: block;
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            font-size: 28px;
+            width: 65px;
+            height: 65px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            font-size: 26px;
             font-weight: 700;
-            line-height: 60px;
+            line-height: 65px;
             margin-bottom: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
         }
         
         .countdown-label {
-            font-size: 12px;
+            font-size: 13px;
             color: #aaa;
             text-transform: uppercase;
         }
         
         .powered-by {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 14px;
-            color: #777;
+            color: #999;
         }
         
         @media (max-width: 480px) {
             .container {
                 padding: 20px;
             }
-            
-            .logo {
-                font-size: 36px;
-            }
-            
-            .telegram-title {
-                font-size: 20px;
-            }
-            
+            .logo { font-size: 32px; }
+            .telegram-title { font-size: 20px; }
             .countdown-value {
                 width: 50px;
                 height: 50px;
-                font-size: 24px;
+                font-size: 22px;
                 line-height: 50px;
             }
         }
     </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
         <h1 class="logo">Aviator</h1>
-        <p class="subtitle">super hack bot signal</p>
+        <p class="subtitle">Super Hack Bot Signal</p>
+
+        <!-- Circle Logo -->
+        <div class="circle-logo"></div>
         
         <div class="telegram-section">
-            <h2 class="telegram-title">JOIN TELEGRAM CHANNEL</h2>
-            <p class="trusted">100% trusted channel</p>
+            <h2 class="telegram-title">Join Telegram Channel</h2>
+            <p class="trusted">🔥 100% Trusted & Winning Channel 🔥</p>
             
             <div class="features">
                 <div class="feature-item">
-                    <div class="feature-checkbox"></div>
+                    <div class="feature-checkbox checked"></div>
                     <span class="feature-text">100% Winning Signals</span>
                 </div>
                 <div class="feature-item">
@@ -205,12 +244,13 @@
                     <span class="feature-text">Automatic Deposit & Withdrawal</span>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-checkbox"></div>
-                    <span class="feature-text">100% Safe & Secure Aviator</span>
+                    <div class="feature-checkbox checked"></div>
+                    <span class="feature-text">Safe & Secure Aviator Bot</span>
                 </div>
             </div>
             
-            <a href="https://t.me/+h0XNzmqB-xowY2M1" class="join-button" target="_blank">JOIN TELEGRAM CHANNEL</a>
+            <!-- Button -->
+            <a href="https://t.me/+h0XNzmqB-xowY2M1" class="join-button" target="_blank">🚀 Join Telegram Channel</a>
             
             <div class="countdown">
                 <div class="countdown-item">
@@ -238,23 +278,17 @@
         
         // Update the countdown every 1 second
         const countdownFunction = setInterval(function() {
-            // Get today's date and time
             const now = new Date().getTime();
-            
-            // Find the distance between now and the countdown date
             const distance = countDownDate - now;
             
-            // Time calculations for days, hours, minutes and seconds
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             
-            // Display the result
             document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
             document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
             document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
             
-            // If the countdown is finished, reset to 7 days
             if (distance < 0) {
                 countDownDate.setDate(countDownDate.getDate() + 7);
             }
